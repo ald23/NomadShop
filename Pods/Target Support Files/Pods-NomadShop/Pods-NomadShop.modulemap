@@ -1,0 +1,6 @@
+module Pods_NomadShop {
+  umbrella header "Pods-NomadShop-umbrella.h"
+
+  export *
+  module * { export * }
+}
