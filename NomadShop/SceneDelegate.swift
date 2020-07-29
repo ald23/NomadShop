@@ -19,16 +19,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let winScene = (scene as? UIWindowScene) else { return }
         
-        let layout = UICollectionViewFlowLayout()
-        // Create the root view controller as needed
-        let nc = UINavigationController(rootViewController: HomeController(collectionViewLayout: layout))
-
-        // Create the window. Be sure to use this initializer and not the frame one.
+        let homeController = HomeController(collectionViewLayout: UICollectionViewFlowLayout())
+        let navigationController = UINavigationController(rootViewController: homeController)
         let win = UIWindow(windowScene: winScene)
-        win.rootViewController = nc
         win.makeKeyAndVisible()
-        window = win
 
+        win.rootViewController = navigationController
+//        window?.rootViewController = TabBarController()
+        
+        window = win
+        
 
     }
 
